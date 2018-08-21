@@ -19,5 +19,8 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+
+Route::get('/service/new', 'ServiceTrackingController@getNewOrder')->name('getNewOrder');
+
 Route::post('/changeTheme', 'HomeController@changeTheme')->name('changeTheme');
 
