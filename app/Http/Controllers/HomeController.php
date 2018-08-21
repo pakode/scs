@@ -29,7 +29,7 @@ class HomeController extends Controller
     }
 
     public function changeTheme(Request $request) {
-        DB::table('users')
+        DB::table('MsUsers')
             ->where('id',Auth::id())
             ->update([
                 'theme'=>$request->theme

@@ -5,6 +5,28 @@
         <div class="menu">
             <ul class="list">
                 <li class="header">@lang('system.menu_service')</li>
+                @foreach($menus as $menu)
+                <li class="{{ Request::segment(1) == $menu->segment ?'active': '' }}" >
+                    <a href="{{$menu->child == 1 ? 'javascript:void(0);' : $menu->target}}" {{$menu->child == 1 ? 'class=menu-toggle' : ''}} >
+                        <i class="material-icons">{{$menu->class}}</i>
+                        <span>@lang('system.'.$menu->name)</span>
+                    </a>
+                    @if($menu->child == 1)
+                        <ul class="ml-menu">
+                            @foreach($submenus as $submenu)
+                                @if($submenu->parent == $menu->id)
+                                    <li class="{{ Request::segment(1) == $menu->segment &&  Request::segment(2) == $submenu->segment  ?'active': '' }}">
+                                        <a href="{{$submenu->target}}">
+                                           {{-- <i class="material-icons">{{$submenu->class}}</i>--}}
+                                            <span>@lang('system.'.$submenu->name)</span>
+                                        </a>
+                                    </li>
+                                @endif
+                            @endforeach
+                        </ul>
+                    @endif
+                </li>
+                @endforeach
                 <li>
                     <a href="{{route('home')}}">
                         <i class="material-icons">dashboard</i>

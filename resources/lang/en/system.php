@@ -10,6 +10,9 @@ return [
 
     'menu_service' => 'Service Menu',
     'menu_admin' => 'Administration Menu',
+    'dashboard'=>'Dashboard',
+    'service_tracking' => 'Service Tracking',
+    'new_service' => 'New Service Order'
 
 
 
