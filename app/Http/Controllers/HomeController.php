@@ -35,4 +35,8 @@ class HomeController extends Controller
                 'theme'=>$request->theme
             ]);
     }
+
+    public function unauthorized() {
+        return view('unauthorized');
+    }
 }

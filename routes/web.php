@@ -20,7 +20,11 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 
-Route::get('/service/new', 'ServiceTrackingController@getNewOrder')->name('getNewOrder');
+Route::group(['middleware' => 'App\Http\Middleware\Users'], function(){
+    Route::get('/service/new', 'ServiceTrackingController@getNewOrder')->name('getNewOrder');
+    Route::get('/service/acknowledgement', 'ServiceTrackingController@getAcknowledgement')->name('getAcknowledgement');
+
+});
 
 Route::post('/changeTheme', 'HomeController@changeTheme')->name('changeTheme');
-
+Route::get('/unauthorized', 'HomeController@unauthorized')->name('unauthorized');

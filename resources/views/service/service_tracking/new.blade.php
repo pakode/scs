@@ -24,7 +24,7 @@
                     </ul>
                 </div>
                 <div class="body">
-
+                    Body
                 </div>
             </div>
         </div>

@@ -26,73 +26,56 @@
                     @endif
                 </li>
                 @endforeach
+                @if(Auth::user()->role == 0)
+                <li class="header">@lang('system.menu_admin')</li>
                 <li>
                     <a href="{{route('home')}}">
-                        <i class="material-icons">dashboard</i>
-                        <span>Dashboard</span>
+                        <i class="material-icons">business</i>
+                        <span>@lang('system.company_setting')</span>
                     </a>
                 </li>
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">trending_down</i>
-                        <span>Multi Level Menu</span>
+                        <i class="material-icons">supervised_user_circle</i>
+                        <span>@lang('system.users')</span>
                     </a>
                     <ul class="ml-menu">
                         <li>
                             <a href="javascript:void(0);">
-                                <span>Menu Item</span>
+                                <span>@lang('system.user_management')</span>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0);">
-                                <span>Menu Item - 2</span>
+                                <span>@lang('system.role_management')</span>
                             </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="menu-toggle">
-                                <span>Level - 2</span>
-                            </a>
-                            <ul class="ml-menu">
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <span>Menu Item</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="menu-toggle">
-                                        <span>Level - 3</span>
-                                    </a>
-                                    <ul class="ml-menu">
-                                        <li>
-                                            <a href="javascript:void(0);">
-                                                <span>Level - 4</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
                 </li>
-                <li class="header">@lang('system.menu_admin')</li>
-                <li>
-                    <a href="javascript:void(0);">
-                        <i class="material-icons col-red">donut_large</i>
-                        <span>Important</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0);">
-                        <i class="material-icons col-amber">donut_large</i>
-                        <span>Warning</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0);">
-                        <i class="material-icons col-light-blue">donut_large</i>
-                        <span>Information</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">build</i>
+                            <span>@lang('system.system_setting')</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span>@lang('system.product_setting')</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span>@lang('system.labor_setting')</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span>@lang('system.common_setting')</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
             </ul>
         </div>
         <!-- #Menu -->

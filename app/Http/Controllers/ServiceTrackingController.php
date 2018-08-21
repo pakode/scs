@@ -13,7 +13,7 @@ class ServiceTrackingController extends Controller {
         return view('service.service_tracking.new');
     }
 
-    public function getAcknowledegement(){
+    public function getAcknowledgement(){
         return view('service.service_tracking.acknowledgement');
     }
 }
