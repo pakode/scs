@@ -17,7 +17,6 @@
                                 @if($submenu->parent == $menu->id)
                                     <li class="{{ Request::segment(1) == $menu->segment &&  Request::segment(2) == $submenu->segment  ?'active': '' }}">
                                         <a href="{{$submenu->target}}">
-                                           {{-- <i class="material-icons">{{$submenu->class}}</i>--}}
                                             <span>@lang('system.'.$submenu->name)</span>
                                         </a>
                                     </li>

@@ -10,7 +10,6 @@
         <div class="block-header">
             <h2>New Order</h2>
 
-            {{ Request::segment(1) }}
         </div>
     </div>
 </section>

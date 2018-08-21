@@ -335,15 +335,23 @@
                 </div>
             </div>
         </nav>
-        <button id="notif" type="button" class="hidden btn bg-cyan btn-block waves-effect" data-placement-from="top" data-placement-align="right" data-animate-enter="animated bounceInRight"
-                data-animate-exit="animated bounceOutRight" data-color-name="bg-black">
-            BOUNCE IN/OUT RIGHT
-        </button>
         <!-- #Top Bar -->
 
         @include('layouts.sidebar')
 
-        @yield('content')
+
+        <section class="content">
+            <div class="container-fluid">
+                <div class="block-header">
+                    <h2>@yield('title')</h2>
+                </div>
+                @yield('content')
+            </div>
+        </section>
+
+
+
+
 
         <!-- Jquery Core Js -->
         <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
