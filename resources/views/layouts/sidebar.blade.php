@@ -6,56 +6,62 @@
             <ul class="list">
                 <li class="header">@lang('system.menu_service')</li>
                 @foreach($menus as $menu)
-                <li class="{{ Request::segment(1) == $menu->segment ?'active': '' }}" >
-                    <a href="{{$menu->child == 1 ? 'javascript:void(0);' : $menu->target}}" {{$menu->child == 1 ? 'class=menu-toggle' : ''}} >
-                        <i class="material-icons">{{$menu->class}}</i>
-                        <span>@lang('system.'.$menu->name)</span>
-                    </a>
-                    @if($menu->child == 1)
-                        <ul class="ml-menu">
-                            @foreach($submenus as $submenu)
-                                @if($submenu->parent == $menu->id)
-                                    <li class="{{ Request::segment(1) == $menu->segment &&  Request::segment(2) == $submenu->segment  ?'active': '' }}">
-                                        <a href="{{$submenu->target}}">
-                                            <span>@lang('system.'.$submenu->name)</span>
-                                        </a>
-                                    </li>
-                                @endif
-                            @endforeach
-                        </ul>
-                    @endif
-                </li>
+                    <li class="{{ Request::segment(1) == $menu->segment ?'active': '' }}" >
+                        <a href="{{$menu->child == 1 ? 'javascript:void(0);' : $menu->target}}" {{$menu->child == 1 ? 'class=menu-toggle' : ''}} >
+                            <i class="material-icons">{{$menu->class}}</i>
+                            <span>@lang('system.'.$menu->name)</span>
+                        </a>
+                        @if($menu->child == 1)
+                            <ul class="ml-menu">
+                                @foreach($submenus as $submenu)
+                                    @if($submenu->parent == $menu->id)
+                                        <li class="{{ Request::segment(1) == $menu->segment &&  Request::segment(2) == $submenu->segment  ?'active': '' }}">
+                                            <a href="{{$submenu->target}}">
+                                                <span>@lang('system.'.$submenu->name)</span>
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        @endif
+                    </li>
                 @endforeach
                 @if(Auth::user()->role == 0)
-                <li class="header">@lang('system.menu_admin')</li>
-                <li>
-                    <a href="{{route('home')}}">
-                        <i class="material-icons">business</i>
-                        <span>@lang('system.company_setting')</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">supervised_user_circle</i>
-                        <span>@lang('system.users')</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="javascript:void(0);">
-                                <span>@lang('system.user_management')</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">
-                                <span>@lang('system.role_management')</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                    <li class="header">@lang('system.menu_admin')</li>
+                    <li>
+                        <a href="{{route('home')}}">
+                            <i class="material-icons">business</i>
+                            <span>@lang('system.company')</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <i class="material-icons">meeting_room</i>
+                            <span>@lang('system.branch')</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">supervised_user_circle</i>
+                            <span>@lang('system.users')</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span>@lang('system.user_management')</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span>@lang('system.role_management')</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">build</i>
-                            <span>@lang('system.system_setting')</span>
+                            <span>@lang('system.settings')</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
@@ -82,10 +88,10 @@
         <!-- Footer -->
         <div class="legal">
             <div class="copyright">
-                &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                &copy; 2018 <a href="javascript:void(0);">SCS - Material Design</a>
             </div>
             <div class="version">
-                <b>Version: </b> 1.0.5
+                <b>Version: </b> 1.0
             </div>
         </div>
         <!-- #Footer -->

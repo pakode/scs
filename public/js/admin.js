@@ -110,7 +110,7 @@ $.AdminBSB.leftSideBar = {
     setMenuHeight: function (isFirstTime) {
         if (typeof $.fn.slimScroll != 'undefined') {
             var configs = $.AdminBSB.options.leftSideBar;
-            var height = ($(window).height() - ($('.legal').outerHeight() + $('.user-info').outerHeight() + $('.navbar').innerHeight()));
+            var height = ($(window).height() - ($('.legal').outerHeight() + /*$('.user-info').outerHeight() +*/ $('.navbar').innerHeight()));
             var $el = $('.list');
 
             if (!isFirstTime) {

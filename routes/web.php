@@ -17,12 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'Service\DashboardController@getDashboard')->name('home');
 
 
 Route::group(['middleware' => 'App\Http\Middleware\Users'], function(){
-    Route::get('/service/new', 'ServiceTrackingController@getNewOrder')->name('getNewOrder');
-    Route::get('/service/acknowledgement', 'ServiceTrackingController@getAcknowledgement')->name('getAcknowledgement');
+    Route::get('/service/new', 'Service\ServiceTrackingController@getNewOrder')->name('getNewOrder');
+    Route::get('/service/acknowledgement', 'Service\ServiceTrackingController@getAcknowledgement')->name('getAcknowledgement');
 
 });
 

@@ -14,7 +14,7 @@ class Administrator
      * @return mixed
      */
     public function handle($request, Closure $next) {
-        if ($request->user()->role == 0) {
+        if ($request->user()->role == 0 && $request->user()->active == 1 ) {
             return $next($request);
         }else {
             return redirect(route('unauthorized'));

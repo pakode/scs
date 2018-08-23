@@ -24,7 +24,20 @@ return [
     'labor_setting' => 'Labor Setting',
     'common_setting' => 'Common Setting',
     'users' => 'Users',
-    'system_setting' => 'System Setting'
+    'system_setting' => 'System Setting',
+    'acknowledgement' => 'Acknowledgement',
+    'purchase_order' => 'Purchase Order',
+    'part_sales' => 'Part Sales',
+    'material_information' => 'Material Information',
+    'material_request' => 'Material Request',
+    'inventory_management' => 'Inventory Management',
+    'accounting' => 'Accounting',
+    'outlet_setting' => 'Outlet Setting',
+    'branch'=>'Branch',
+    'settings' => 'Settings',
+    'new_branch' => 'New Branch',
+    'manage' => 'New Branch',
+    'company' => 'Company'
 
 
 

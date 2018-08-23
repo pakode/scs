@@ -18,7 +18,7 @@ class Users
         $array = explode(',', $request->user()->access);
         $uri = "/scs/".$request->path();
         $cek = DB::table('SubsMsMenus')->where('target',$uri)->whereIn('id',$array)->get();
-        if (count($cek)) {
+        if (count($cek) && $request->user()->active == 1) {
             return $next($request);
         }else {
             return redirect(route('unauthorized'));
