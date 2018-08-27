@@ -34,10 +34,34 @@ return [
     'accounting' => 'Accounting',
     'outlet_setting' => 'Outlet Setting',
     'branch'=>'Branch',
+    'outlet'=> 'Outlet',
+    'new_outlet' => 'New Outlet',
     'settings' => 'Settings',
     'new_branch' => 'New Branch',
-    'manage' => 'New Branch',
-    'company' => 'Company'
+    'manage' => 'Manage',
+    'company' => 'Company',
+    'save' => 'Save',
+    'edit' => 'Edit',
+    'company_name' => 'Company Name',
+    'company_email' => 'Company Email',
+    'company_phone' => 'Company Phone',
+    'company_address' => 'Company Address',
+    'please_wait' => 'Please wait...',
+    'minimum_character' => 'Minimum :value Characters',
+    'no' => 'No',
+    'yes' => 'Yes',
+    'outlet_id' => 'Outlet ID',
+    'name' => 'Name',
+    'address' => 'Address',
+    'phone' => 'Phone',
+    'status' => 'Status',
+    'action' =>'Action',
+    'active' => 'Active',
+    'outlet_name' => 'Outlet Name',
+    'outlet_phone' => 'Outlet Phone',
+    'outlet_address' => 'Outlet Address',
+
+
 
 
 

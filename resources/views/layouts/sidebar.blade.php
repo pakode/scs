@@ -28,16 +28,16 @@
                 @endforeach
                 @if(Auth::user()->role == 0)
                     <li class="header">@lang('system.menu_admin')</li>
-                    <li>
-                        <a href="{{route('home')}}">
+                    <li class="{{ Request::segment(1) == 'company' ?'active': '' }}">
+                        <a href="{{route('getCompany')}}">
                             <i class="material-icons">business</i>
                             <span>@lang('system.company')</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="javascript:void(0);">
+                    <li class="{{ Request::segment(1) == 'outlets' ? 'active': '' }}">
+                        <a href="{{route('getOutlets')}}">
                             <i class="material-icons">meeting_room</i>
-                            <span>@lang('system.branch')</span>
+                            <span>@lang('system.outlet')</span>
                         </a>
                     </li>
                     <li>

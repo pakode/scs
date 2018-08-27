@@ -17,7 +17,7 @@ class Users
     public function handle($request, Closure $next) {
         $array = explode(',', $request->user()->access);
         $uri = "/scs/".$request->path();
-        $cek = DB::table('SubsMsMenus')->where('target',$uri)->whereIn('id',$array)->get();
+        $cek = DB::table('MsSubscriberMenus')->where('target',$uri)->whereIn('id',$array)->get();
         if (count($cek) && $request->user()->active == 1) {
             return $next($request);
         }else {

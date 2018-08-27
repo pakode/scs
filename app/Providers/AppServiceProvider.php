@@ -16,8 +16,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot() {
         view()->composer('layouts.sidebar',function ($view) {
             $array = explode(',', Auth::user()->access);
-            $menus=DB::table('SubsMsMenus')->where('sequence','<>',0)->whereIn('id',$array)->get();
-            $submenus = DB::table('SubsMsMenus')->where('sequence','=',0)->whereIn('id',$array)->get();
+            $menus=DB::table('MsSubscriberMenus')->where('sequence','<>',0)->whereIn('id',$array)->get();
+            $submenus = DB::table('MsSubscriberMenus')->where('sequence','=',0)->whereIn('id',$array)->get();
             $view->with(['menus' => $menus,'submenus' => $submenus]);
         });
     }
