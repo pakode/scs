@@ -104,6 +104,16 @@
             .page-loader-wrapper {
                 opacity: 0.8;
             }
+
+            .form-group .form-line.focused:after {
+                border-bottom-color: grey;
+            }
+
+            table td {
+                vertical-align: middle !important;
+            }
+
+
         </style>
 
 
@@ -412,6 +422,15 @@
             const demo_skin = document.querySelector('.demo-choose-skin');
             //console.log(demo_skin);
 
+            function objectifyForm(formArray) {//serialize data function
+
+                var returnArray = {};
+                for (var i = 0; i < formArray.length; i++){
+                    returnArray[formArray[i]['name']] = formArray[i]['value'];
+                }
+                return returnArray;
+            }
+
             function post(path, params, method) {
                 method = method || "post";
 
@@ -481,11 +500,9 @@
                             '</div>'
                         });
             }
-
-
             $(function () {
                 @isset($hasTable)
-$('.js-basic-example').DataTable({
+                $('.js-basic-example').DataTable({
                     responsive: true,
                     columnDefs: [
                         { orderable: false, targets: -1 }

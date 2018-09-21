@@ -25,8 +25,14 @@ Route::group(['middleware' => 'App\Http\Middleware\Administrator'], function(){
     Route::post('/company', 'Admin\CompanyController@postCompany')->name('postCompany');
 
     Route::get('/outlets', 'Admin\OutletsController@getOutlets')->name('getOutlets');
-
     Route::get('/outlets/new', 'Admin\OutletsController@getNewOutlets')->name('getNewOutlets');
+    Route::get('/outlets', 'Admin\OutletsController@getOutlets')->name('getOutlets');
+
+    Route::get('/users/user', 'Admin\UsersController@getUsers')->name('getUsers');
+    Route::get('/users/role', 'Admin\UsersController@getRoles')->name('getRoles');
+
+    Route::get('/settings/product','Admin\SettingsController@getProductSetting')->name('getProductSetting');
+    Route::post('/settings/product','Admin\SettingsController@postProductSetting')->name('postProductSetting');
 });
 
 

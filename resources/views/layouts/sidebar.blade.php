@@ -40,32 +40,31 @@
                             <span>@lang('system.outlet')</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="{{ Request::segment(1) == 'users' ? 'active': '' }}">
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">supervised_user_circle</i>
                             <span>@lang('system.users')</span>
                         </a>
                         <ul class="ml-menu">
-                            <li>
-                                <a href="javascript:void(0);">
+                            <li class="{{ Request::segment(2) == 'user' ?'active': '' }}">
+                                <a href="{{route('getUsers')}}">
                                     <span>@lang('system.user_management')</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="javascript:void(0);">
+                            <li class="{{ Request::segment(2) == 'role'  ?'active': '' }}">
+                                <a href="{{route('getRoles')}}">
                                     <span>@lang('system.role_management')</span>
                                 </a>
-                            </li>
-                        </ul>
+                            </li>                       </ul>
                     </li>
-                    <li>
+                    <li class="{{ Request::segment(1) == 'settings' ? 'active': '' }}" >
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">build</i>
                             <span>@lang('system.settings')</span>
                         </a>
                         <ul class="ml-menu">
-                            <li>
-                                <a href="javascript:void(0);">
+                            <li class="{{ Request::segment(2) == 'product'  ?'active': '' }}">
+                                <a href="{{route('getProductSetting')}}">
                                     <span>@lang('system.product_setting')</span>
                                 </a>
                             </li>

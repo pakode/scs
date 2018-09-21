@@ -48,6 +48,8 @@ return [
     'company_address' => 'Company Address',
     'please_wait' => 'Please wait...',
     'minimum_character' => 'Minimum :value Characters',
+    'cannot_be_empty' => 'Cannot be empty',
+    'are_you_sure' => 'Are you sure ?',
     'no' => 'No',
     'yes' => 'Yes',
     'outlet_id' => 'Outlet ID',
@@ -60,6 +62,7 @@ return [
     'outlet_name' => 'Outlet Name',
     'outlet_phone' => 'Outlet Phone',
     'outlet_address' => 'Outlet Address',
+    'number' => 'No.'
 
 
 

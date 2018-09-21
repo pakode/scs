@@ -105,14 +105,7 @@
         function initCounters() {
             $('.count-to').countTo();
         }
-        function objectifyForm(formArray) {//serialize data function
 
-            var returnArray = {};
-            for (var i = 0; i < formArray.length; i++){
-                returnArray[formArray[i]['name']] = formArray[i]['value'];
-            }
-            return returnArray;
-        }
         function edit() {
             let el = $('.form-line.editable');
             let bt = $('#bt_save_company');

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 
-@section('title', 'Blank')
+@section('title', 'Role Management')
 
 
 @section('content')
