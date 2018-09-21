@@ -62,7 +62,18 @@ return [
     'outlet_name' => 'Outlet Name',
     'outlet_phone' => 'Outlet Phone',
     'outlet_address' => 'Outlet Address',
-    'number' => 'No.'
+    'number' => 'No.',
+    'new_category' =>'New Category',
+    'new_product' =>'New Product',
+    'product_code' =>'Product Code',
+    'category_code' =>'Category Code',
+    'model_code' =>'Model Code',
+    'remark' =>'Remark',
+    'close' =>'Close',
+    'product' =>'Product',
+    'category' =>'Category',
+
+
 
 
 

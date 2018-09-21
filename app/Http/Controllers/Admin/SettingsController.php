@@ -16,6 +16,7 @@ class SettingsController extends Controller {
     }
 
     public function getAction($act) {
+
         $dtm = new DateTime();
         $first = $act."_at";
         $second = $act."_by";
@@ -23,15 +24,26 @@ class SettingsController extends Controller {
             $first => $dtm->format('Y-m-d H:i:s'),
             $second => Auth::user()->name
         ];
+        if ($act == 'created') {
+            $array += ['company_id' => Auth::user()->company_id];
+        }
 
         return $array;
     }
 
     public function getProductSetting() {
 
-        $data['categories'] = DB::table('MsSubscriberCategoryProduct')
+        $data['products'] = DB::table('MsSubscriberProduct')
+            ->where('company_id',Auth::user()->company_id)
             ->where('deleted_at',null)
-            ->select('id', 'product_code','product_remark','created_by')
+            ->select('id', 'category_code','model_code','model_remark','created_by')
+            ->orderBy('created_at','desc')
+            ->get();
+
+        $data['categories'] = DB::table('MsSubscriberCategoryProduct')
+            ->where('company_id',Auth::user()->company_id)
+            ->where('deleted_at',null)
+            ->select('id', 'category_code','category_remark','created_by')
             ->orderBy('created_at','desc')
             ->get();
 
@@ -42,11 +54,14 @@ class SettingsController extends Controller {
     public function postProductSetting(Request $request) {
         if ($request->action == 'new') {
             $form_data =  $request->data;
-            DB::table('MsSubscriberCategoryProduct')
+            DB::table($request->table)
                 ->insert($form_data+$this->getAction('created'));
         }
+
         if ($request->action == 'delete') {
-            DB::table('MsSubscriberCategoryProduct')->delete($request->id);
+            DB::table($request->table)
+                ->where('id',$request->id)
+                ->update($this->getAction('deleted'));
         }
 
     }
